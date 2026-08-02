@@ -1,9 +1,12 @@
+## Project Structure
+
+```text
 trace-data-platform/
 ├── dbt/
 │   ├── dbt_project.yml
 │   ├── packages.yml
-│   ├── models
-│   │   ├── staging
+│   ├── models/
+│   │   ├── staging/
 │   │   │   ├── posthog/
 │   │   │   ├── supabase/
 │   │   │   └── backend/
@@ -29,10 +32,12 @@ trace-data-platform/
 ├── scripts/
 ├── docs/
 │   └── architecture.md
-├── requirements-dbt.txt
-├── .gitignore
 ├── .github/
 │   └── workflows/
 │       ├── dbt-ci.yml
 │       └── deploy.yml
+├── requirements-dbt.txt
+├── .gitignore
 └── README.md
+```
+
