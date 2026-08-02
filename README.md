@@ -1,11 +1,9 @@
-# trace_data_pipline
-
 trace-data-platform/
 ├── dbt/
 │   ├── dbt_project.yml
 │   ├── packages.yml
-│   ├── models/
-│   │   ├── staging/
+│   ├── models
+│   │   ├── staging
 │   │   │   ├── posthog/
 │   │   │   ├── supabase/
 │   │   │   └── backend/
