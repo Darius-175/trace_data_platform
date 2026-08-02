@@ -1,41 +1,38 @@
 ## Project Structure
 
 ```text
-trace-data-platform/
+trace-analytics/
+│
 ├── dbt/
 │   ├── dbt_project.yml
 │   ├── packages.yml
 │   ├── models/
+│   │   ├── sources/
+│   │   │   └── posthog_sources.yml
 │   │   ├── staging/
-│   │   │   ├── posthog/
-│   │   │   ├── supabase/
-│   │   │   └── backend/
-│   │   ├── intermediate/
+│   │   │   ├── stg_posthog_events.sql
+│   │   │   └── staging.yml
 │   │   ├── core/
+│   │   │   ├── fct_events.sql
+│   │   │   ├── dim_users.sql
+│   │   │   ├── fct_user_daily_activity.sql
+│   │   │   └── core.yml
 │   │   └── marts/
-│   │       ├── product/
-│   │       ├── growth/
-│   │       └── revenue/
-│   ├── snapshots/
-│   ├── tests/
-│   ├── macros/
-│   └── seeds/
+│   │       ├── mart_daily_product_metrics.sql
+│   │       └── marts.yml
+│   └── macros/
+│
 ├── airflow/
-│   ├── dags/
-│   └── tests/
-├── docker/
-│   └── dbt/
-│       └── Dockerfile
-├── deploy/
-│   └── dbt/
-│       └── profiles.yml
-├── scripts/
-├── docs/
-│   └── architecture.md
+│   └── dags/
+│       └── posthog_dbt_hourly.py
+│
+├── config/
+│   └── profiles.yml
+│
 ├── .github/
 │   └── workflows/
-│       ├── dbt-ci.yml
-│       └── deploy.yml
+│       └── dbt_ci.yml
+│
 ├── requirements-dbt.txt
 ├── .gitignore
 └── README.md
